@@ -18,7 +18,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name = "user", schema = "pet_schema")
+@Table(name = "users")
 public class UserRequest {
 
     @Id

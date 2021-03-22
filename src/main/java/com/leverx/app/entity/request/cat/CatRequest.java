@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "cat", schema = "pet_schema")
+@Table(name = "cats")
 public class CatRequest extends PetRequest {
 
     @Id

@@ -1,8 +1,8 @@
 applications:
   #Application
-- name: petsApp
+- name: petsAppPostgreSQL
   instances: 1
   memory: 1G
   disk_quota: 1G
-  path: target/petsApp-1.0-SNAPSHOT.jar
+  path: target/petsAppPostgreSQL-1.0-SNAPSHOT.jar
   buildpack: https://github.com/cloudfoundry/java-buildpack.git#v4.17.1

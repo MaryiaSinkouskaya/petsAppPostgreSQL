@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "pet", schema = "pet_schema")
+@Table(name = "pets")
 public abstract class PetRequest {
 
     @Id
