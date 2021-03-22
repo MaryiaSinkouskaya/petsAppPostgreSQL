@@ -1,7 +1,5 @@
-package com.leverx.app.dto.pet;
+package com.leverx.app.entity.response.user;
 
-import com.leverx.app.dto.user.UserDto;
-import com.leverx.app.entity.pet.Pet;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,10 +9,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PetDto {
+public class UserResponse {
 
     private String name;
-
-    private UserDto user;
 
 }

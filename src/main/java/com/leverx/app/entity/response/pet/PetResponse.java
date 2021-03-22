@@ -1,6 +1,6 @@
-package com.leverx.app.dto.user;
+package com.leverx.app.entity.response.pet;
 
-import com.leverx.app.entity.user.User;
+import com.leverx.app.entity.response.user.UserResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,8 +10,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDto {
+public class PetResponse {
 
     private String name;
+
+    private UserResponse user;
 
 }

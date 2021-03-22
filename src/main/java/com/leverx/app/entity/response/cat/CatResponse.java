@@ -1,7 +1,6 @@
-package com.leverx.app.dto.cat;
+package com.leverx.app.entity.response.cat;
 
-import com.leverx.app.dto.pet.PetDto;
-import com.leverx.app.entity.cat.Cat;
+import com.leverx.app.entity.response.pet.PetResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CatDto extends PetDto {
+public class CatResponse extends PetResponse {
 
     private boolean clippedClaws;
 

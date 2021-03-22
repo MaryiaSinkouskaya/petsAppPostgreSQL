@@ -1,8 +1,7 @@
-package com.leverx.app.dto.dog;
+package com.leverx.app.entity.response.dog;
 
-import com.leverx.app.dto.pet.PetDto;
-import com.leverx.app.entity.dog.Dog;
-import com.leverx.app.entity.dog.enums.PawColour;
+import com.leverx.app.entity.response.pet.PetResponse;
+import com.leverx.app.entity.request.dog.enums.PawColour;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +11,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DogDto  extends PetDto {
+public class DogResponse extends PetResponse {
 
     private PawColour pawColour;
 

@@ -1,7 +1,7 @@
-package com.leverx.app.entity.dog;
+package com.leverx.app.entity.request.dog;
 
-import com.leverx.app.entity.dog.enums.PawColour;
-import com.leverx.app.entity.pet.Pet;
+import com.leverx.app.entity.request.dog.enums.PawColour;
+import com.leverx.app.entity.request.pet.PetRequest;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "dog", schema = "pet_schema")
-public class Dog extends Pet {
+public class DogRequest extends PetRequest {
 
     @Id
     @Column(name = "id")

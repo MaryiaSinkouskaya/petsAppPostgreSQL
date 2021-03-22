@@ -1,21 +1,21 @@
 package com.leverx.app.service;
 
-import com.leverx.app.entity.dog.Dog;
+import com.leverx.app.entity.response.dog.DogResponse;
+import com.leverx.app.entity.request.dog.DogRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public interface DogService {
 
-    Optional<Dog> find(long id);
+    DogResponse find(long id);
 
-    List<Dog> findAll();
+    List<DogResponse> findAll();
 
-    Dog create(Dog dog);
+    DogResponse create(DogRequest dog);
 
     void delete(long id);
 
-    Dog update(Dog dog);
+    DogResponse update(DogRequest dog);
 }

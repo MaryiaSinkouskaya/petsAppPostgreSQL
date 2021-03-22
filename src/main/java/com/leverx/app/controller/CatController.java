@@ -1,6 +1,7 @@
 package com.leverx.app.controller;
 
-import com.leverx.app.entity.cat.Cat;
+import com.leverx.app.entity.response.cat.CatResponse;
+import com.leverx.app.entity.request.cat.CatRequest;
 import com.leverx.app.service.CatService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -24,17 +24,17 @@ public class CatController {
     private final CatService catService;
 
     @RequestMapping(value = "/{id}", method = GET)
-    public Optional<Cat> getCatById(@PathVariable(name = "id") long id) {
+    public CatResponse getCatById(@PathVariable(name = "id") long id) {
         return catService.find(id);
     }
 
     @RequestMapping(method = GET)
-    public List<Cat> getAllCats() {
+    public List<CatResponse> getAllCats() {
         return catService.findAll();
     }
 
     @RequestMapping(method = POST)
-    public Cat createCat(@RequestBody Cat cat) {
+    public CatResponse createCat(@RequestBody CatRequest cat) {
         return catService.create(cat);
     }
 
@@ -44,7 +44,7 @@ public class CatController {
     }
 
     @RequestMapping(method = PUT)
-    public Cat updateCat(@RequestBody Cat cat) {
+    public CatResponse updateCat(@RequestBody CatRequest cat) {
         return catService.update(cat);
     }
 }

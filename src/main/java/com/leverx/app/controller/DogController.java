@@ -1,6 +1,7 @@
 package com.leverx.app.controller;
 
-import com.leverx.app.entity.dog.Dog;
+import com.leverx.app.entity.response.dog.DogResponse;
+import com.leverx.app.entity.request.dog.DogRequest;
 import com.leverx.app.service.DogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -24,17 +24,17 @@ public class DogController {
     private final DogService dogService;
 
     @RequestMapping(value = "/{id}", method = GET)
-    public Optional<Dog> getDogById(@PathVariable(name = "id") long id) {
+    public DogResponse getDogById(@PathVariable(name = "id") long id) {
         return dogService.find(id);
     }
 
     @RequestMapping(method = GET)
-    public List<Dog> getAllDogs() {
+    public List<DogResponse> getAllDogs() {
         return dogService.findAll();
     }
 
     @RequestMapping(method = POST)
-    public Dog createDog(@RequestBody Dog dog) {
+    public DogResponse createDog(@RequestBody DogRequest dog) {
         return dogService.create(dog);
     }
 
@@ -44,7 +44,7 @@ public class DogController {
     }
 
     @RequestMapping(method = PUT)
-    public Dog updateDog(@RequestBody Dog dog) {
+    public DogResponse updateDog(@RequestBody DogRequest dog) {
         return dogService.update(dog);
     }
 }
