@@ -3,7 +3,7 @@
 - [Description](#description)
 - [Structure](#structure)
 - [Usage](#usage)
-- [Used technologies](#used technologies)
+- [Used technologies](#used-technologies)
 
 ## Description
 This is simple REST app, running at SAP cloud foundry, which provides user managing instances, such as: User, Pet (Cat, Dog). You can create/update/delete/get them.
