@@ -30,18 +30,22 @@ the PostgreSQL service on SAP BTP.
 2. Write config file ([application.properties](src/main/resources/application.properties)).
 3. Write manifest ([manifest.yml](manifest.yml)).
 
-   3.1 Bind app to service:
-    - Add to manifest:
+3.1 Bind app to service:
+- Add to manifest:
+
    ```
      services:
-     - SERVICE_INSTANCE
+     - INSTANCE-NAME
    ```
-    - Or using CLI:
+
+- Or using CLI:
+
    ```
-   $ cf bind-service APP-NAME SERVICE_INSTANCE
+   $ cf bind-service APP-NAME INSTANCE-NAME
    ```
 
 4. Push app to the cloud:
+
    ```
    $ cf push
    ```
@@ -89,7 +93,7 @@ $ cf service-key MY-DB EXTERNAL-ACCESS-KEY
 
 - Use command line psql to connect to the DB (you need installed postgresql client on your local machine):
 
-```
+   ```
   $ psql -d <dbname> -U <username> -p 8081
   \dt #command to view all tables in the database
    ```
