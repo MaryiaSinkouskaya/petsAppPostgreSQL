@@ -31,6 +31,7 @@ the PostgreSQL service on SAP BTP.
 3. Write manifest ([manifest.yml](manifest.yml)).
 
 3.1 Bind app to service:
+
 - Add to manifest:
 
    ```
@@ -54,7 +55,13 @@ Finally, your app start working on cloud.
 
 5.This optional step explains how to gain direct access to your DB (service instance).
 
-5.1 Configure an SSH tunnel to your service instance using cf ssh:
+5.1 Enable SSH for your app.
+
+   ```
+$ cf enable-ssh YOUR-HOST-APP
+   ```
+
+5.2 Configure an SSH tunnel to your service instance using cf ssh:
 
    ```
    $ cf ssh -L localhost:8081:<hostname>:<port> YOUR-HOST-APP -N
@@ -66,7 +73,7 @@ Finally, your app start working on cloud.
 - Replace YOUR-HOST-APP with the name of your host app.
 - After you enter the command, open another terminal window.
 
-5.2 Connect to the DB:
+5.3 Connect to the DB:
 
 - Use command line psql to connect to the DB (you need installed postgresql client on your local machine):
 
