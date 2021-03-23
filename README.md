@@ -54,42 +54,19 @@ Finally, your app start working on cloud.
 
 5.This optional step explains how to gain direct access to your DB (service instance).
 
-5.1 Create service key to establish SSH access to your service instance.
-
-   ```
- $ cf create-service-key MY-DB EXTERNAL-ACCESS-KEY
-   ```
-
-5.2 Service key contains information for configuring your SSH tunnel.
-
-   ```
-$ cf service-key MY-DB EXTERNAL-ACCESS-KEY
-{
- "dbname": "78a13387500fa00ead4bc1d3f31e7ba3",
- "hostname": "10.11.26.117",
- "username": "f15c53ee2b9edc4180bada12c4d29568",
- "password": "e275bf3dfd6b46deef68aae02d138ea5",
- "port": 5432,
- "uri": "postgres://f15c53ee2b9edc4180bada12c4d29568:e275bf3dfd6b46deef68aae02d138ea5@10.11.26.117:5432/78a13387500fa00ead4bc1d3f31e7ba3",
- "url": "postgres://f15c53ee2b9edc4180bada12c4d29568:e275bf3dfd6b46deef68aae02d138ea5@10.11.26.117:5432/78a13387500fa00ead4bc1d3f31e7ba3",
- "read_url": "jdbc:postgresql://10.11.26.112,10.11.26.113/78a13387500fa00ead4bc1d3f31e7ba3?targetServerType=preferSlave\u0026loadBalanceHosts=true",
- "write_url": "jdbc:postgresql://10.11.26.112,10.11.26.113/78a13387500fa00ead4bc1d3f31e7ba3?targetServerType=master"
-}
-   ```
-
-5.3 Configure an SSH tunnel to your service instance using cf ssh:
+5.1 Configure an SSH tunnel to your service instance using cf ssh:
 
    ```
    $ cf ssh -L localhost:8081:<hostname>:<port> YOUR-HOST-APP -N
    ```
 
 - Use any available local port for port forwarding. For example, 8081.
-- Replace <hostname> with hostname from your service key.
-- Replace <port> with port from your service key.
+- Replace <hostname> with hostname from your service credentials.
+- Replace <port> with port from your service credentials.
 - Replace YOUR-HOST-APP with the name of your host app.
 - After you enter the command, open another terminal window.
 
-5.4 Connect to the DB:
+5.2 Connect to the DB:
 
 - Use command line psql to connect to the DB (you need installed postgresql client on your local machine):
 
