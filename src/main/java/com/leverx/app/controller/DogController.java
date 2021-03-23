@@ -1,7 +1,7 @@
 package com.leverx.app.controller;
 
-import com.leverx.app.entity.response.dog.DogResponse;
 import com.leverx.app.entity.request.dog.DogRequest;
+import com.leverx.app.entity.response.dog.DogResponse;
 import com.leverx.app.service.DogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PathVariable;

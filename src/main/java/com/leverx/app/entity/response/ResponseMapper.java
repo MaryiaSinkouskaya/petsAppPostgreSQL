@@ -1,13 +1,13 @@
 package com.leverx.app.entity.response;
 
-import com.leverx.app.entity.response.cat.CatResponse;
-import com.leverx.app.entity.response.dog.DogResponse;
-import com.leverx.app.entity.response.pet.PetResponse;
-import com.leverx.app.entity.response.user.UserResponse;
 import com.leverx.app.entity.request.cat.CatRequest;
 import com.leverx.app.entity.request.dog.DogRequest;
 import com.leverx.app.entity.request.pet.PetRequest;
 import com.leverx.app.entity.request.user.UserRequest;
+import com.leverx.app.entity.response.cat.CatResponse;
+import com.leverx.app.entity.response.dog.DogResponse;
+import com.leverx.app.entity.response.pet.PetResponse;
+import com.leverx.app.entity.response.user.UserResponse;
 import lombok.NoArgsConstructor;
 
 import static lombok.AccessLevel.PRIVATE;

@@ -1,9 +1,9 @@
 package com.leverx.app.service.impl;
 
-import com.leverx.app.entity.response.ResponseMapper;
-import com.leverx.app.entity.response.user.UserResponse;
 import com.leverx.app.entity.request.pet.PetRequest;
 import com.leverx.app.entity.request.user.UserRequest;
+import com.leverx.app.entity.response.ResponseMapper;
+import com.leverx.app.entity.response.user.UserResponse;
 import com.leverx.app.repository.PetRepository;
 import com.leverx.app.repository.UserRepository;
 import com.leverx.app.service.UserService;

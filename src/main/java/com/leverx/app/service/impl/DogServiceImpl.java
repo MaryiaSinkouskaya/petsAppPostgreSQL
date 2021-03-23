@@ -1,8 +1,8 @@
 package com.leverx.app.service.impl;
 
+import com.leverx.app.entity.request.dog.DogRequest;
 import com.leverx.app.entity.response.ResponseMapper;
 import com.leverx.app.entity.response.dog.DogResponse;
-import com.leverx.app.entity.request.dog.DogRequest;
 import com.leverx.app.repository.DogRepository;
 import com.leverx.app.service.DogService;
 import lombok.RequiredArgsConstructor;

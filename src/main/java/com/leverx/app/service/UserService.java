@@ -1,7 +1,7 @@
 package com.leverx.app.service;
 
-import com.leverx.app.entity.response.user.UserResponse;
 import com.leverx.app.entity.request.user.UserRequest;
+import com.leverx.app.entity.response.user.UserResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

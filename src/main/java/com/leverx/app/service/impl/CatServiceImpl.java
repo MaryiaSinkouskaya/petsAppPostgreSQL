@@ -1,8 +1,8 @@
 package com.leverx.app.service.impl;
 
+import com.leverx.app.entity.request.cat.CatRequest;
 import com.leverx.app.entity.response.ResponseMapper;
 import com.leverx.app.entity.response.cat.CatResponse;
-import com.leverx.app.entity.request.cat.CatRequest;
 import com.leverx.app.repository.CatRepository;
 import com.leverx.app.service.CatService;
 import lombok.RequiredArgsConstructor;

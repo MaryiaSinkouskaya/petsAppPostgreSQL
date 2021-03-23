@@ -1,7 +1,7 @@
 package com.leverx.app.repository;
 
-import com.leverx.app.entity.response.user.UserResponse;
 import com.leverx.app.entity.request.user.UserRequest;
+import com.leverx.app.entity.response.user.UserResponse;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

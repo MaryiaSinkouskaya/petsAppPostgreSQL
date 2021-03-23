@@ -1,7 +1,7 @@
 package com.leverx.app.controller;
 
-import com.leverx.app.entity.response.user.UserResponse;
 import com.leverx.app.entity.request.user.UserRequest;
+import com.leverx.app.entity.response.user.UserResponse;
 import com.leverx.app.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PathVariable;
