@@ -1,11 +1,10 @@
-package com.leverx.app.entity.pet;
+package com.leverx.app.entity.request.pet;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.leverx.app.entity.user.User;
+import com.leverx.app.entity.request.user.UserRequest;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,8 +20,8 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "pet", schema = "pet_schema")
-public abstract class Pet {
+@Table(name = "pets")
+public abstract class PetRequest {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,5 +34,5 @@ public abstract class Pet {
     @ManyToOne()
     @JoinColumn(name = "user_id")
     @JsonBackReference(value = "user-pet")
-    private User user;
+    private UserRequest user;
 }

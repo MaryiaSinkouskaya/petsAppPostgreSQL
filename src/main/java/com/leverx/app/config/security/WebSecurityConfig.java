@@ -1,6 +1,5 @@
 package com.leverx.app.config.security;
 
-import com.leverx.app.service.impl.UserCredentialsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -17,13 +16,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @RequiredArgsConstructor
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final UserCredentialsServiceImpl userDetailsServiceImpl;
 
     @Autowired
     public void globalUserDetails(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder
-                .userDetailsService(userDetailsServiceImpl)
-                .passwordEncoder(encoder());
+                .inMemoryAuthentication()
+                .withUser("Ann")
+                .password(encoder().encode("1111"))
+                .roles("USER");
     }
 
     @Bean

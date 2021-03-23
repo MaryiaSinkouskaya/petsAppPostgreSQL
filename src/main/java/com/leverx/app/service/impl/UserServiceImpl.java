@@ -1,9 +1,9 @@
 package com.leverx.app.service.impl;
 
-import com.leverx.app.dto.DtoMapper;
-import com.leverx.app.dto.user.UserDto;
-import com.leverx.app.entity.pet.Pet;
-import com.leverx.app.entity.user.User;
+import com.leverx.app.entity.request.pet.PetRequest;
+import com.leverx.app.entity.request.user.UserRequest;
+import com.leverx.app.entity.response.ResponseMapper;
+import com.leverx.app.entity.response.user.UserResponse;
 import com.leverx.app.repository.PetRepository;
 import com.leverx.app.repository.UserRepository;
 import com.leverx.app.service.UserService;
@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+import static com.leverx.app.entity.response.ResponseMapper.convert;
 import static java.util.stream.Collectors.toList;
 
 @RequiredArgsConstructor
@@ -27,41 +28,41 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public User create(User user) {
+    public UserResponse create(UserRequest user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        return userRepository.save(user);
+        return convert(userRepository.save(user));
     }
 
     @Override
-    public UserDto find(long id) {
-        Optional<User> user = userRepository.findById(id);
-        return user.map(DtoMapper::convert).orElseGet(UserDto::new);
+    public UserResponse find(long id) {
+        Optional<UserRequest> user = userRepository.findById(id);
+        return user.map(ResponseMapper::convert).orElseGet(UserResponse::new);
     }
 
     @Override
-    public List<UserDto> findAll() {
+    public List<UserResponse> findAll() {
         return userRepository.findAll().stream()
-                .map(DtoMapper::convert)
+                .map(ResponseMapper::convert)
                 .collect(toList());
     }
 
     @Override
-    public Optional<UserDto> findByName(String name) {
+    public Optional<UserResponse> findByName(String name) {
         return userRepository.findByName(name);
     }
 
     @Transactional
     @Override
     public void delete(long id) {
-        List<Pet> pets = petRepository.findAllByUserId(id);
+        List<PetRequest> pets = petRepository.findAllByUserId(id);
         pets.forEach(pet -> pet.setUser(null));
         petRepository.saveAll(pets);
         userRepository.deleteById(id);
     }
 
     @Override
-    public User update(User user) {
-        return userRepository.save(user);
+    public UserResponse update(UserRequest user) {
+        return convert(userRepository.save(user));
     }
 
 }

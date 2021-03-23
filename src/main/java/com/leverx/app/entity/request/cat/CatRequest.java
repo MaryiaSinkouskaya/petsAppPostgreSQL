@@ -1,6 +1,6 @@
-package com.leverx.app.entity.cat;
+package com.leverx.app.entity.request.cat;
 
-import com.leverx.app.entity.pet.Pet;
+import com.leverx.app.entity.request.pet.PetRequest;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,8 +16,8 @@ import javax.persistence.Table;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "cat", schema = "pet_schema")
-public class Cat extends Pet {
+@Table(name = "cats")
+public class CatRequest extends PetRequest {
 
     @Id
     @Column(name = "id")
